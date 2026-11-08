@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.Language.Locale | default "en" }}">
 
 <head>
   <title>{{ if and (not .IsHome) (.Title) }}{{ .Params.Title }} - {{ end }}{{ .Site.Title }}</title>
