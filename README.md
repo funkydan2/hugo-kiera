@@ -237,3 +237,5 @@ If the `lastmod` option is set on a page/post, either manually or because `enabl
 ## Support and Pull Requests
 
 Please use GitHub issues to file bugs. If you can help fixing bugs, optimize the theme or adding features, please do pull requests, I really love to see what others can come up with.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a22b47b2-8816-47c9-adcf-86712e53ab55/deploy-status)](https://app.netlify.com/projects/hugo-kiera/deploys)
