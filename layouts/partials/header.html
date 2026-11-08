@@ -26,15 +26,16 @@
             <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
           {{ end }}
         {{- end -}}
-        {{- range .Site.Data.social.social_icons -}}
-          {{- if isset $.Site.Params.Author .id }}
-             <li>
-               <a href="{{ printf .url (index $.Site.Params.Author .id) }}" title="{{ .title }}">
-               <i class="{{ .icon }} fa-lg"></i>
-               </a>
-             </li>
-           {{- end -}}
-        {{ end }}
+        {- range hugo.Data.social.social_icons -}}
+          {{- $social := . -}}
+          {{- with index $.Site.Params.author $social.id -}}
+            <li>
+              <a href="{{ printf $social.url . }}" title="{{ $social.title }}">
+                <i class="{{ $social.icon }} fa-lg"></i>
+              </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
       </ul>
       {{ with .Site.Params.tagline }}
       <p><em>{{ . | markdownify }}</em></p>
