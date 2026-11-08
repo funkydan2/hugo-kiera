@@ -26,7 +26,7 @@
             <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
           {{ end }}
         {{- end -}}
-        {- range hugo.Data.social.social_icons -}}
+        {{- range hugo.Data.social.social_icons -}}
           {{- $social := . -}}
           {{- with index $.Site.Params.author $social.id -}}
             <li>
