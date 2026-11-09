@@ -21,10 +21,9 @@
       </h1>
 
       <ul id="social-media">
-        {{- range .Site.Languages -}}
-          {{ if ne .LanguageName $.Site.Language.LanguageName }}
-            <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
-          {{ end }}
+        {{- range hugo.Sites -}}
+          {{ $site := . }}
+          <li><a href="{{ $site.Home.RelPermalink }}">{{ $site.Language.Label }}</a></li>
         {{- end -}}
         {{- range hugo.Data.social.social_icons -}}
           {{- $social := . -}}
